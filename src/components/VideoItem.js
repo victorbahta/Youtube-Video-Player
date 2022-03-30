@@ -1,10 +1,14 @@
 import React from "react";
-
-const VideoItem = ({ video }) => {
+import "./VideoItem.css";
+const VideoItem = ({ video, onVideoSelect }) => {
   const snap = video.snippet;
   return (
-    <div className="item">
-      <img className="ui image" src={snap.thumbnails.medium.url} />
+    <div onClick={() => onVideoSelect(video)} className="video-item item">
+      <img
+        alt={snap.title}
+        className="ui image"
+        src={snap.thumbnails.medium.url}
+      />
       <div className="content">
         <h4 className="header">{snap.title}</h4>
       </div>
