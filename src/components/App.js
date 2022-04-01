@@ -10,6 +10,10 @@ class App extends React.Component {
   }
   state = { videos: [], selected: null };
 
+  componentDidMount() {
+    this.onFormSubmit("buildings");
+  }
+
   onFormSubmit = async (term) => {
     const response = await youtube.get("/search", {
       params: {
